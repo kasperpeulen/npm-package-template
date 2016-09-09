@@ -2,12 +2,6 @@
   "name": "npm-package-template",
   "version": "0.1.0",
   "description": "Support redux actions that are classes instead of plain objects.",
-  "main": "index.js",
-  "scripts": {
-    "test": "mocha src/**/*.spec.js --compilers js:babel-core/register -w",
-    "build": "babel src --out-dir lib",
-    "start": "babel src --out-dir lib -w"
-  },
   "repository": {
     "type": "git",
     "url": "https:/github.com/kasperpeulen/redux-support-action-class"
@@ -21,6 +15,12 @@
     "url": "https:/github.com/kasperpeulen/redux-support-action-class/issues"
   },
   "homepage": "https:/github.com/kasperpeulen/redux-support-action-class",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha src/**/*.spec.js --compilers js:babel-core/register -w",
+    "build": "babel src --out-dir lib",
+    "start": "babel src --out-dir lib -w"
+  },
   "devDependencies": {
     "babel-cli": "^6.11.4",
     "babel-core": "^6.13.2",
@@ -43,18 +43,25 @@
     "webpack": "^1.13.1"
   },
   "babel": {
-    "presets": ["es2015", "es2016", "babel-preset-react"],
+    "presets": [
+      "es2015",
+      "es2016",
+      "babel-preset-react"
+    ],
     "plugins": [
       "syntax-trailing-function-commas",
       "syntax-async-functions",
       "transform-class-properties",
       "transform-object-rest-spread",
       "transform-regenerator",
-      ["transform-runtime", {
-        "helpers": false,
-        "polyfill": false,
-        "regenerator": true
-      }]
+      [
+        "transform-runtime",
+        {
+          "helpers": false,
+          "polyfill": false,
+          "regenerator": true
+        }
+      ]
     ]
   }
 }
