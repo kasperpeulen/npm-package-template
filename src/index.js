@@ -1,1 +1,5 @@
-export const square = n => n * n;
+// @flow
+
+export default function sum (a: number, b: number): number {
+  return a + b
+}

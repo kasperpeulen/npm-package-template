@@ -1,9 +1,7 @@
-import {square} from './index';
-import {expect} from 'chai';
-import {describe, it} from 'mocha';
+// @flow
+import sum from './index'
 
-describe("square", () => {
-  it("squares a number", () => {
-    expect(square(3)).to.equal(9);
-  });
-});
+it('adds 1 + 2 to equal 3', () => {
+  expect(sum(1, 2)).toBe(3)
+})
+
